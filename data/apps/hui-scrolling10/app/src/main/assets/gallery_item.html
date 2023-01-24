@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery Item</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style>
+        body {
+          margin: 0;
+          background: #eee;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+            sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        .list-item {
+          background: #eee;
+          padding: 4px 8px;
+        }
+        .list-item-content {
+          display: grid;
+          grid-template-columns: 80px 1fr;
+          border-radius: 8px;
+          background: white;
+          border: 1px solid #dfdfdf;
+        }
+        .list-item-content img {
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+          width: 100%;
+          grid-row-start: 1;
+          grid-row-end: 3;
+        }
+        .list-item-content h2, .list-item-content p {
+          margin: 0;
+          padding: 0 5px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .list-item-content h2 {
+          font-size: 20px;
+          align-self: end;
+          padding-bottom: 5px;
+        }
+        .list-item-content p {
+          font-size: 16px;
+        }
+    </style>
+    <script>
+        function renderData(items) {
+            function template(title, subtitle, image) {
+                const listItem = document.createElement('div');
+                listItem.setAttribute('class', 'list-item');
+
+                const listItemContent = document.createElement('div');
+                listItemContent.setAttribute('class', 'list-item-content');
+                listItem.appendChild(listItemContent);
+
+                const i = document.createElement('img');
+                i.setAttribute('src', image);
+                listItemContent.appendChild(i);
+
+                const t = document.createElement('h2');
+                t.textContent = title;
+                listItemContent.appendChild(t);
+
+                const s = document.createElement('p');
+                s.textContent = subtitle;
+                listItemContent.appendChild(s);
+
+                return listItem;
+            }
+
+            requestAnimationFrame(() => {
+                const list = document.querySelector('#list');
+                const fragment = document.createDocumentFragment();
+                for (let i = 0; i < items.length; i++) {
+                    fragment.appendChild(template(items[i].title, items[i].subtitle, "file:///android_asset/data/" + items[i].image));
+                }
+                list.replaceChildren(fragment);
+            });
+        }
+        /*
+        function renderData2(items) {
+            requestAnimationFrame(() => {
+                const list = document.querySelector('#list');
+                for (let i = 0; i < list.children.length; i++) {
+                    const elements = list.children[i].children[0].children;
+                    elements[0].setAttribute('src', "file:///android_asset/data/" + items[i].image);
+                    elements[1].textContent = items[i].title;
+                    elements[2].textContent = items[i].subtitle;
+                }
+            });
+        }
+
+
+        function renderData1(items) {
+            function template(title, subtitle, image) {
+                return `
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <img src="${image}" />
+                            <h2>${title}</h2>
+                            <p>${subtitle}</p>
+                        </div>
+                    </div>
+                `;
+            };
+
+            requestAnimationFrame(() => {
+                const list = document.querySelector('#list');
+                let text = "";
+                for (let i = 0; i < items.length; i++) {
+                    text += template(items[i].title, items[i].subtitle, "file:///android_asset/data/" + items[i].image);
+                }
+                list.innerHTML = text;
+            });
+        }
+        */
+    </script>
+</head>
+<body id="list">
+
+</body>
+</html>

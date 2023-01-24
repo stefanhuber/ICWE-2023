@@ -1,0 +1,8 @@
+monsoon
+numpy
+Faker
+requests
+pandas
+seaborn
+matplotlib
+jupyter

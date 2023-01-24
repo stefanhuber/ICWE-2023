@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_home_2"
+        android:icon="@drawable/ic_add_outline"
+        android:title="Add New Entry" />
+
+    <item
+        android:id="@+id/nav_form_2"
+        android:icon="@drawable/ic_build_outline"
+        android:title="Edit Entry" />
+
+    <item
+        android:id="@+id/nav_form_3"
+        android:icon="@drawable/ic_cloud_upload_outline"
+        android:title="Upload Entry" />
+
+    <item
+        android:id="@+id/nav_form_4"
+        android:icon="@drawable/ic_link_outline"
+        android:title="Link Entry" />
+</menu>
