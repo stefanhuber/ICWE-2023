@@ -46,6 +46,20 @@ jupyter notebook
 
 ![UI Components](./docs/screens.png)
 
+## Apps
+
+The source code of the apps, which contain the UI components, resided inside the `./data/apps` folder.
+
+ - `hui-android-elements`: contains `Dialog`, `Drawer`, `Sheet` implementation for Android native
+ - `hui-android-scrolling`: contains `Scrolling` implementation for Android native
+ - `hui-capacitor-elements`: contains `Dialog`, `Drawer`, `Sheet` implementation for Capacitor
+ - `hui-capacitor-scrolling`: contains `Scrolling` implementation for Capacitor
+ - `hui-elements`: contains `Dialog`, `Drawer`, `Sheet` implementation for Hybrid UI Components
+ - `hui-scrolling1`: contains `Scrolling` implementation for for Hybrid UI Components, with 1 item per WebView
+ - `hui-scrolling4`: contains `Scrolling` implementation for for Hybrid UI Components, with 4 items per WebView
+ - `hui-scrolling10`: contains `Scrolling` implementation for for Hybrid UI Components, with 10 items per WebView
+ - `instrumentation`: contains the scripts to interact with the UI components
+
 ## Results
 
 ![Results](./docs/results.png)
